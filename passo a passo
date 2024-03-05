@@ -1,0 +1,7 @@
+importamos o módulo mysql.
+Configuramos as informações de conexão com o banco de dados, incluindo host, usuário, senha e nome do banco de dados.
+Criamos uma conexão usando mysql.createConnection() e passamos as informações de configuração.
+Usamos connection.connect() para conectar ao banco de dados.
+Realizamos uma consulta SQL usando connection.query(). Esta função recebe a consulta SQL como o primeiro argumento e uma função de retorno de chamada que lida com os resultados da consulta.
+No exemplo, estamos apenas imprimindo os resultados no console.
+Por fim, encerramos a conexão com o banco de dados usando connection.end().
