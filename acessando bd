@@ -1,0 +1,38 @@
+// Importa o módulo mysql
+const mysql = require('mysql');
+
+// Configuração da conexão com o banco de dados
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'seu_usuario',
+  password: 'sua_senha',
+  database: 'nome_do_banco_de_dados'
+});
+
+// Conectar ao banco de dados
+connection.connect((err) => {
+  if (err) {
+    console.error('Erro ao conectar ao banco de dados:', err);
+    throw err;
+  }
+  console.log('Conexão bem sucedida ao banco de dados MySQL.');
+});
+
+// Exemplo de consulta ao banco de dados
+connection.query('SELECT * FROM tabela', (err, rows) => {
+  if (err) throw err;
+
+  console.log('Dados recuperados do banco de dados:');
+  console.log(rows);
+
+  // Você pode realizar operações com os dados recuperados aqui
+});
+
+// Encerra a conexão com o banco de dados quando todas as consultas são concluídas
+connection.end((err) => {
+  if (err) {
+    console.error('Erro ao encerrar conexão com o banco de dados:', err);
+    throw err;
+  }
+  console.log('Conexão com o banco de dados encerrada.');
+});
